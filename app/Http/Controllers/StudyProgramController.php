@@ -61,7 +61,7 @@ class StudyProgramController extends Controller
             'code'       => [
                 'required',
                 'max:20',
-                Rule::unique('study_programs', 'code'),
+                Rule::unique('study_programs', 'code')->whereNull('deleted_at'),
             ],
             'name'       => [
                 'required',
@@ -100,7 +100,8 @@ class StudyProgramController extends Controller
                 'required',
                 'max:20',
                 Rule::unique('study_programs', 'code')
-                    ->ignore($studyProgram->id),
+                    ->ignore($studyProgram->id)
+                    ->withoutTrashed(),
             ],
             'name'       => [
                 'required',

@@ -23,7 +23,7 @@
 
                     <option value="{{ $studyProgram->id }}" @selected(old('study_program_id', $classroom->study_program_id ?? '') == $studyProgram->id)>
 
-                        {{ $studyProgram->faculty->code }} - {{ $studyProgram->name }}
+                        {{ $studyProgram->faculty?->code }} - {{ $studyProgram->name }}
 
                     </option>
 

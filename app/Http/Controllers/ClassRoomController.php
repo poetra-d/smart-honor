@@ -79,7 +79,7 @@ public function index(Request $request)
             ],
             'code' => [
                 'required',
-                'max:20',
+                Rule::unique('classes', 'code')->whereNull('deleted_at')
             ],
             'name' => [
                 'required',
@@ -133,6 +133,9 @@ public function index(Request $request)
             'code' => [
                 'required',
                 'max:20',
+                Rule::unique('classes', 'code')
+                    ->ignore($classroom->id)
+                    ->withoutTrashed(),
             ],
             'name' => [
                 'required',

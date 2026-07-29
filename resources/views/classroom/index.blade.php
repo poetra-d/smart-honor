@@ -121,13 +121,13 @@
 
                                 <td>
 
-                                    {{ $item->studyProgram->name }}
+                                    {{ $item->studyProgram?->name }}
 
                                 </td>
 
                                 <td>
 
-                                    {{ $item->academicYear->code }}
+                                    {{ $item->academicYear?->code }}
 
                                 </td>
 

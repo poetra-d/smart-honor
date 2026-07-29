@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EmploymentStatus;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class EmploymentStatusController extends Controller
 {
@@ -32,7 +33,10 @@ class EmploymentStatusController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'code' => 'required|max:20|unique:employment_statuses,code',
+            'code' => [
+                'required',
+                Rule::unique('employment_statuses', 'code')->whereNull('deleted_at')
+            ],
             'name' => 'required|max:100',
         ]);
 
@@ -53,7 +57,12 @@ class EmploymentStatusController extends Controller
     public function update(Request $request, EmploymentStatus $employmentStatus)
     {
         $validated = $request->validate([
-            'code' => 'required|max:20|unique:employment_statuses,code,' . $employmentStatus->id,
+            'code' => [
+                'required',
+                Rule::unique('employment_statuses', 'code')
+                    ->ignore($employmentStatus->id)
+                    ->withoutTrashed(),
+            ],
             'name' => 'required|max:100',
         ]);
 

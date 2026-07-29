@@ -25,9 +25,9 @@
                     </th>
 
                     <td>
-                        {{ $meeting->schedule->courseOffering->course->code }}
+                        {{ $meeting->schedule?->courseOffering?->course?->code }}
                         -
-                        {{ $meeting->schedule->courseOffering->course->name }}
+                        {{ $meeting->schedule?->courseOffering?->course?->name }}
                     </td>
                 </tr>
 
@@ -38,7 +38,7 @@
                     </th>
 
                     <td>
-                        {{ $meeting->schedule->courseOffering->class->name }}
+                        {{ $meeting->schedule?->courseOffering?->class?->name }}
                     </td>
                 </tr>
 
@@ -60,10 +60,10 @@
                     </th>
 
                     <td>
-                        {{ $meeting->schedule->day }},
-                        {{ $meeting->schedule->start_time }}
+                        {{ $meeting->schedule?->day }},
+                        {{ $meeting->schedule?->start_time }}
                         -
-                        {{ $meeting->schedule->end_time }}
+                        {{ $meeting->schedule?->end_time }}
                     </td>
                 </tr>
 
@@ -74,7 +74,7 @@
                     </th>
 
                     <td>
-                        {{ $meeting->schedule->room->room_name }}
+                        {{ $meeting->schedule?->room?->room_name }}
                     </td>
                 </tr>
 

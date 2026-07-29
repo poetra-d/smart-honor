@@ -73,18 +73,18 @@
 
                                             <td>
 
-                                                {{ $meeting->schedule->courseOffering->course->code }}
+                                                {{ $meeting->schedule?->courseOffering?->course?->code }}
 
                                                 -
 
-                                                {{ $meeting->schedule->courseOffering->course->name }}
+                                                {{ $meeting->schedule?->courseOffering?->course?->name }}
 
                                             </td>
 
 
                                             <td>
 
-                                                {{ $meeting->schedule->courseOffering->class->name }}
+                                                {{ $meeting->schedule?->courseOffering?->class?->name }}
 
                                             </td>
 

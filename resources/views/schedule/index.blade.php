@@ -110,30 +110,30 @@
 
                                 <td>
 
-                                    {{ $item->courseOffering->course->code }}
+                                    {{ $item->courseOffering?->course?->code }}
                                     -
-                                    {{ $item->courseOffering->course->name }}
+                                    {{ $item->courseOffering?->course?->name }}
 
                                 </td>
 
 
                                 <td>
 
-                                    {{ $item->courseOffering->class->name }}
+                                    {{ $item->courseOffering?->class?->name }}
 
                                 </td>
 
 
                                 <td>
 
-                                    {{ $item->courseOffering->lecturer->employee->name }}
+                                    {{ $item->courseOffering?->lecturer?->employee?->name }}
 
                                 </td>
 
 
                                 <td>
 
-                                    {{ $item->room->name }}
+                                    {{ $item->room?->room_name }}
 
                                 </td>
 

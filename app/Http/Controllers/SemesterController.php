@@ -46,7 +46,7 @@ class SemesterController extends Controller
             'code' => [
                 'required',
                 'max:20',
-                Rule::unique('semesters', 'code'),
+                Rule::unique('semesters', 'code')->whereNull('deleted_at'),
             ],
             'name' => [
                 'required',
@@ -88,7 +88,8 @@ class SemesterController extends Controller
                 'required',
                 'max:20',
                 Rule::unique('semesters', 'code')
-                    ->ignore($semester->id),
+                    ->ignore($semester->id)
+                    ->withoutTrashed(),
             ],
             'name' => [
                 'required',

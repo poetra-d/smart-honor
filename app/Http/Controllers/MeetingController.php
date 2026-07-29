@@ -43,7 +43,7 @@ class MeetingController extends Controller
         ])
             ->get();
 
-        $statuses = Meeting::STATUS;
+        $statuses = Meeting::STATUSES;
 
         return view(
             'meeting.create',

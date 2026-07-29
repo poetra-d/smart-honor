@@ -33,7 +33,7 @@
                         {{ \Carbon\Carbon::create()
         ->month((int) $honorPayment->month)
         ->translatedFormat('F')
-                        }}
+                            }}
 
                         {{ $honorPayment->year }}
 
@@ -218,11 +218,11 @@
                                                 <td>
 
 
-                                                    {{ $detail->courseOffering->course->code ?? '-' }}
+                                                    {{ $detail->courseOffering?->course?->code ?? '-' }}
 
                                                     -
 
-                                                    {{ $detail->courseOffering->course->name ?? '-' }}
+                                                    {{ $detail->courseOffering?->course?->name ?? '-' }}
 
 
                                                 </td>
@@ -236,7 +236,7 @@
 
                                                     Pertemuan
 
-                                                    {{ $detail->meeting->meeting_number ?? '-' }}
+                                                    {{ $detail->meeting?->meeting_number ?? '-' }}
 
 
                                                 </td>
@@ -256,7 +256,7 @@
 
                                 : '-'
 
-                                                        }}
+                                                                                }}
 
 
                                                 </td>

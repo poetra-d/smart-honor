@@ -105,8 +105,13 @@ class DashboardController extends Controller
 
         $lecturer = auth()
             ->user()
-            ->employee
-            ->lecturer;
+            ->employee?->lecturer;
+
+        abort_if(
+            ! $lecturer,
+            403,
+            'Akun ini bukan dosen.'
+        );
 
         return view(
             'dashboard.index',

@@ -64,7 +64,7 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->courseOffering->academicYear->name }}
+                    {{ $schedule->courseOffering?->academicYear?->name }}
 
                 </div>
 
@@ -79,7 +79,7 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->courseOffering->semester->name }}
+                    {{ $schedule->courseOffering?->semester?->name }}
 
                 </div>
 
@@ -94,9 +94,9 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->courseOffering->course->code }}
+                    {{ $schedule->courseOffering?->course?->code }}
                     -
-                    {{ $schedule->courseOffering->course->name }}
+                    {{ $schedule->courseOffering?->course?->name }}
 
                 </div>
 
@@ -111,7 +111,7 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->courseOffering->class->name }}
+                    {{ $schedule->courseOffering?->class?->name }}
 
                 </div>
 
@@ -126,7 +126,7 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->courseOffering->lecturer->employee->name }}
+                    {{ $schedule->courseOffering?->lecturer?->employee->name }}
 
                 </div>
 
@@ -141,7 +141,7 @@
 
                 <div class="col-md-9">
 
-                    {{ $schedule->room->name }}
+                    {{ $schedule->room?->room_name }}
 
                 </div>
 

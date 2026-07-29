@@ -30,7 +30,7 @@
 
 
                     <input type="text" class="form-control" readonly
-                        value="{{ $meeting->schedule->courseOffering->course->name }}">
+                        value="{{ $meeting->schedule?->courseOffering?->course?->name }}">
 
 
                 </div>
@@ -44,9 +44,9 @@
                     <input type="text" class="form-control" readonly value="
             {{ $meeting->schedule->day }}
             |
-            {{ \Carbon\Carbon::parse($meeting->schedule->start_time)->format('H:i') }}
+            {{ \Carbon\Carbon::parse($meeting->schedule?->start_time)->format('H:i') }}
             -
-            {{ \Carbon\Carbon::parse($meeting->schedule->end_time)->format('H:i') }}
+            {{ \Carbon\Carbon::parse($meeting->schedule?->end_time)->format('H:i') }}
             ">
 
                 </div>

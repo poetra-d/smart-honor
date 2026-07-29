@@ -188,9 +188,9 @@
 
                             <option value="{{ $lecturer->id }}" @selected(old('lecturer_id', $courseOffering->lecturer_id ?? '') == $lecturer->id)>
 
-                                {{ $lecturer->employee->nip }}
+                                {{ $lecturer->employee?->nip }}
                                 -
-                                {{ $lecturer->employee->name }}
+                                {{ $lecturer->employee?->name }}
 
                             </option>
 

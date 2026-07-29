@@ -92,7 +92,7 @@
 
                                 <td>
 
-                                    {{ $item->faculty->name }}
+                                    {{ $item->faculty?->name }}
 
                                 </td>
 

@@ -31,15 +31,15 @@
                                 ) == $courseOffering->id
                             )>
 
-                                {{ $courseOffering->course->code }}
+                                {{ $courseOffering->course?->code }}
                                 -
-                                {{ $courseOffering->course->name }}
+                                {{ $courseOffering->course?->name }}
 
                                 |
-                                {{ $courseOffering->class->name }}
+                                {{ $courseOffering->class?->name }}
 
                                 |
-                                {{ $courseOffering->lecturer->employee->name }}
+                                {{ $courseOffering->lecturer?->employee?->name }}
 
                             </option>
 

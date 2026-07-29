@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->academicYear->name }}
+                    {{ $courseOffering->academicYear?->name }}
                 </div>
 
             </div>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->semester->name }}
+                    {{ $courseOffering->semester?->name }}
                 </div>
 
             </div>
@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->course->studyProgram->name }}
+                    {{ $courseOffering->course?->studyProgram?->name }}
                 </div>
 
             </div>
@@ -82,9 +82,9 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->course->code }}
+                    {{ $courseOffering->course?->code }}
                     -
-                    {{ $courseOffering->course->name }}
+                    {{ $courseOffering->course?->name }}
                 </div>
 
             </div>
@@ -96,9 +96,9 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->class->code }}
+                    {{ $courseOffering->class?->code }}
                     -
-                    {{ $courseOffering->class->name }}
+                    {{ $courseOffering->class?->name }}
                 </div>
 
             </div>
@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->lecturer->nidn }}
+                    {{ $courseOffering->lecturer?->nidn }}
                 </div>
 
             </div>
@@ -150,7 +150,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->lecturer->employee->nip }}
+                    {{ $courseOffering->lecturer?->employee?->nip }}
                 </div>
 
             </div>
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->lecturer->employee->name }}
+                    {{ $courseOffering->lecturer?->employee?->name }}
                 </div>
 
             </div>
@@ -174,7 +174,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    {{ $courseOffering->lecturer->employmentStatus->name }}
+                    {{ $courseOffering->lecturer?->employmentStatus?->name }}
                 </div>
 
             </div>

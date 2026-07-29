@@ -166,33 +166,33 @@
 
                                 <td>
 
-                                    {{ $item->academicYear->name }}
+                                    {{ $item->academicYear?->name }}
 
                                 </td>
 
                                 <td>
 
-                                    {{ $item->semester->name }}
+                                    {{ $item->semester?->name }}
 
                                 </td>
 
                                 <td>
 
-                                    {{ $item->course->code }}
+                                    {{ $item->course?->code }}
                                     -
-                                    {{ $item->course->name }}
+                                    {{ $item->course?->name }}
 
                                 </td>
 
                                 <td>
 
-                                    {{ $item->class->name }}
+                                    {{ $item->class?->name }}
 
                                 </td>
 
                                 <td>
 
-                                    {{ $item->lecturer->employee->name }}
+                                    {{ $item->lecturer?->employee?->name }}
 
                                 </td>
 

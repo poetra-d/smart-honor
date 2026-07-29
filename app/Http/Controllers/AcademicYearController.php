@@ -41,7 +41,7 @@ class AcademicYearController extends Controller
             'code'      => [
                 'required',
                 'max:20',
-                Rule::unique('academic_years', 'code'),
+                Rule::unique('academic_years', 'code')->whereNull('deleted_at'),
             ],
             'name'      => [
                 'required',
@@ -81,7 +81,8 @@ class AcademicYearController extends Controller
                 'required',
                 'max:20',
                 Rule::unique('academic_years', 'code')
-                    ->ignore($academicYear->id),
+                    ->ignore($academicYear->id)
+                    ->withoutTrashed(),
             ],
             'name'      => [
                 'required',

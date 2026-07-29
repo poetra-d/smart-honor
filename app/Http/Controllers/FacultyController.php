@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faculty;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class FacultyController extends Controller
 {
@@ -30,7 +31,10 @@ class FacultyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|unique:faculties,code',
+            'code' => [
+                'required',
+                Rule::unique('faculties', 'code')->whereNull('deleted_at')
+            ],
             'name' => 'required',
         ]);
 
@@ -49,7 +53,12 @@ class FacultyController extends Controller
     public function update(Request $request, Faculty $faculty)
     {
         $request->validate([
-            'code' => 'required|unique:faculties,code,' . $faculty->id,
+            'code' => [
+                'required',
+                Rule::unique('faculties', 'code')
+                    ->ignore($faculty->id)
+                    ->withoutTrashed(),
+            ],
             'name' => 'required',
         ]);
 
